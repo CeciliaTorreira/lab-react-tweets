@@ -1,32 +1,25 @@
+import Actions from "./Actions";
 import ProfileImage from "./ProfileImage";
+import Message  from "./Message";
+import Timestamp from "./Timestamp";
+import User from "./User";
+
 
 function Tweet(props) {
   return (
     <div className="tweet">
-      <ProfileImage img={props.tweet.user.image} />
-
+      <ProfileImage image={props.tweet.user.image} />
+   {/* No sé si lo correcto ssería esperar a tener todos los componentes listos y después invocarlos o esperar a tenerlos todos y hacer este paso al final de una o is da igual el orden */}
       <div className="body">
         <div className="top">
-          <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
-          </span>
-
-          <span className="timestamp">Nov 30, 2020</span>
+         <User userData={props.tweet.user}/>
+         <Timestamp time={props.tweet.timestamp}/>
         </div>
 
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
+       <Message message={props.tweet.message}/>
 
-        <div className="actions">
-          {/* Font Awesome icons */}
-          <i className="far fa-comment"></i>
-          <i className="fas fa-retweet"></i>
-          <i className="far fa-heart"></i>
-          <i className="fas fa-share"></i>
-        </div>
+       <Actions />
+
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
