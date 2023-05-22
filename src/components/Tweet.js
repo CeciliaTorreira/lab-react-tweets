@@ -13,7 +13,7 @@ function Tweet(props) {
       <div className="body">
         <div className="top">
          <User userData={props.tweet.user}/>
-         <Timestamp time={props.tweet.timestamp}/>
+         <Timestamp timestamp={props.tweet.timestamp}/>
         </div>
 
        <Message message={props.tweet.message}/>
