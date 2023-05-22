@@ -1,7 +1,7 @@
 function ProfileImage(props){
     return(
         <img
-        src="https://i.imgur.com/9yw1Fyw.jpg"
+        src={props.image}
         className="profile"
         alt="profile"
       />
